@@ -15,3 +15,5 @@ class ZaikoDataViewSet(viewsets.ModelViewSet):
   serializer_class = ZaikoDataSerializers
   authentication_classes = (TokenAuthentication,)
   permission_classes = (IsAuthenticated,)
+  
+  # view閲覧制限追加
