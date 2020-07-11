@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator
 
-# 日付
+
 class ZaikoData(models.Model):
   STATUS = (
     ('1','新品'),
