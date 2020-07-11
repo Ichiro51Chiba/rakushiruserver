@@ -9,7 +9,7 @@ class ZaikoData(models.Model):
     ('2','中古'),
   )
   
-# model_id = models.AutoField()
+
   model_kanzyo = models.IntegerField(validators=  [MinValueValidator(0)])
   # model_no = models.AutoField
   model_code = models.IntegerField(validators=  [MinValueValidator(0)])
