@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import ZaikoData
+from .models import Zaiko
 
-admin.site.register(ZaikoData)
+admin.site.register(Zaiko)

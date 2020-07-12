@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import ZaikoData
+from .models import Zaiko
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 
@@ -14,9 +14,9 @@ class UserSerializers(serializers.ModelSerializer):
     Token.objects.create(user=user)
     return user
   
-class ZaikoDataSerializers(serializers.ModelSerializer):
+class ZaikoSerializers(serializers.ModelSerializer):
   class Meta:
-    model = ZaikoData
-    fields = ('model_kanzyo','model_code','model_price','model_which','model_number','model_name','model_total_price','model_remark','model_pic')
-    read_only_fields = ('model_create_at','model_updated_at')
+    model = Zaiko
+    fields = ('kanzyo','code','price','status','number','name','total_price','remark','pic')
+    read_only_fields = ('create_at','updated_at')
     

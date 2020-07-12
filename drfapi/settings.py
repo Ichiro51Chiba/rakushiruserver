@@ -6,7 +6,12 @@ SECRET_KEY = 'hrgf9-mj)l%^r4r8i3%cxk8d6&!d6w@q#t!_7n0y)7f2&jrj4b'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+]
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -16,9 +21,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'rest_framework.authtoken',
     'api_user.apps.ApiUserConfig',
-    'api_zaikodata.apps.ApiZaikodataConfig',
+    'api_zaikodata',
+    'api_dm.apps.ApiDmConfig',
 ]
 
 
@@ -30,6 +37,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'drfapi.urls'

@@ -3,28 +3,32 @@ from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator
 
 
-class ZaikoData(models.Model):
+
+class Zaiko(models.Model):
   STATUS = (
     ('1','新品'),
     ('2','中古'),
   )
   
 
-  model_kanzyo = models.IntegerField(validators=  [MinValueValidator(0)])
+  kanzyo = models.IntegerField(validators=  [MinValueValidator(0)])
   # model_no = models.AutoField
-  model_code = models.IntegerField(validators=  [MinValueValidator(0)])
-  model_price = models.IntegerField(validators=  [MinValueValidator(0)])
-  model_which = models.CharField(max_length=40,choices=STATUS,  default=1)
-  model_number = models.IntegerField(validators=  [MinValueValidator(0)])
-  model_name = models.CharField(max_length=50)
-  model_total_price = models.IntegerField(validators=  [MinValueValidator(0)])
-  model_remark = models.CharField(max_length=70)
-  model_pic = models.ImageField(upload_to=None,   height_field=None, width_field=None, max_length=100)
-  model_create_at = models.DateTimeField(auto_now_add=True)
-  model_updated_at = models.DateTimeField(auto_now_add=True)
+  code = models.IntegerField(validators=  [MinValueValidator(0)])
+  price = models.IntegerField(validators=  [MinValueValidator(0)])
+  status = models.CharField(max_length=40,choices=STATUS,  default=1)
+  number = models.IntegerField(validators=  [MinValueValidator(0)])
+  name = models.CharField(max_length=50)
+  total_price = models.IntegerField(validators=  [MinValueValidator(0)])
+  remark = models.CharField(max_length=70)
+  pic = models.ImageField(upload_to=None,   height_field=None, width_field=None, max_length=100)
+  create_at = models.DateTimeField(auto_now_add=True)
+  updated_at = models.DateTimeField(null=True,blank=True)
   
   def __str__(self):
-      return self.model_name
+      return self.name
+
+
+
   
 
 
