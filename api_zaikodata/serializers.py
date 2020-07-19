@@ -17,6 +17,6 @@ class UserSerializers(serializers.ModelSerializer):
 class ZaikoSerializers(serializers.ModelSerializer):
   class Meta:
     model = Zaiko
-    fields = ('kanzyo','code','price','status','number','name','total_price','remark','pic')
+    fields = ('pk','kanzyo','code','price','status','number','name','total_price','remark','pic')
     read_only_fields = ('create_at','updated_at')
     

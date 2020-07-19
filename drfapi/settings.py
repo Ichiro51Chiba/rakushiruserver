@@ -23,8 +23,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
-    'api_user.apps.ApiUserConfig',
     'api_zaikodata',
+    'api_user',
     'api_dm.apps.ApiDmConfig',
 ]
 
