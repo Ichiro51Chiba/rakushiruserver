@@ -8,7 +8,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('authen/',views.obtain_auth_token),
-    # path('api/user/',include('api_user.urls')),
+    path('api/user/',include('api_user.urls')),
     path('api/',include('api_zaikodata.urls')),
 ]
 

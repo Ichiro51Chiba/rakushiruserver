@@ -19,4 +19,4 @@ class ZaikoSerializers(serializers.ModelSerializer):
     model = Zaiko
     fields = ('pk','kanzyo','code','price','status','number','name','total_price','remark','pic')
     read_only_fields = ('create_at','updated_at')
-    
+      
