@@ -10,6 +10,8 @@ class Company(models.Model):
   # 郵便番号
   postal_code_regex = RegexValidator(regex=r'^[0-9]+$', message = ("Postal Code must be entered in the format: '1234567'. Up to 7 digits allowed."))
   postal_code = models.CharField(validators=[postal_code_regex], max_length=7, verbose_name='郵便番号') 
+  # 住所
+  address = models.CharField(max_length=50,null=True)
   # 備考
   res = models.CharField(max_length=50)
     # 作成日
