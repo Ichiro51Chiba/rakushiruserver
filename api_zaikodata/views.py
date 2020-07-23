@@ -9,10 +9,14 @@ from rest_framework.permissions import IsAuthenticated,AllowAny
 class UserViewSet(viewsets.ModelViewSet):
   queryset = User.objects.all()
   serializer_class = UserSerializers
+  # authentication_classes = (TokenAuthentication,)
+  # permission_classes = (IsAuthenticated,)
+  
 
 class ZaikoViewSet(viewsets.ModelViewSet):
+  # permission_classes = (IsAuthenticated,)
   queryset = Zaiko.objects.all()
   serializer_class = ZaikoSerializers
   # authentication_classes = (TokenAuthentication,)
-  # permission_classes = (IsAuthenticated,)
+  
   

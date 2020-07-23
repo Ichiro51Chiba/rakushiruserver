@@ -19,7 +19,13 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites', # 追加
     'django.contrib.staticfiles',
+    'rest_auth.registration',
+    'rest_auth',
+    'allauth',
+    'allauth.account', 
+    'allauth.socialaccount', 
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
@@ -98,3 +104,9 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'_media')
 MEDIA_URL = '/media/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
