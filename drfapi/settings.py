@@ -1,4 +1,5 @@
 import os
+import datetime 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -88,7 +89,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ja'
 
 TIME_ZONE = 'ASIA/TOKYO'
 
@@ -108,5 +109,18 @@ MEDIA_URL = '/media/'
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ]
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [ # 追加
+        
+        # APIを渡す役割
+        'rest_framework.authentication.SessionAuthentication',
+        
+        # ブラウザにログイン、ログアウトの機能を提供する
+        'rest_framework.authentication.BasicAuthentication',
+    ],
 }
+
+# ユーザーの登録した時に Email でも認証確認する時に使う機能
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# sites フレームワークの一つで、いくつかの Django プロジェクトからたくさんの Web サイトをホストするための機能
+SITE_ID = 1

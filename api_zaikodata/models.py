@@ -11,6 +11,7 @@ class Zaiko(models.Model):
     ('2','中古'),
   )
   
+  user = models.ForeignKey(User, on_delete=models.CASCADE) #追加
   # 勘定コード
   kanzyo = models.IntegerField(validators=  [MinValueValidator(0)])
   # model_no = models.AutoField
