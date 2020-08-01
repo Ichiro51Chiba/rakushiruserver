@@ -113,14 +113,15 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [ # 追加
         
         # APIを渡す役割
-        'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
         
-        # ブラウザにログイン、ログアウトの機能を提供する
-        'rest_framework.authentication.BasicAuthentication',
+        # # ブラウザにログイン、ログアウトの機能を提供する
+        # 'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ],
 }
 
 # ユーザーの登録した時に Email でも認証確認する時に使う機能
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# sites フレームワークの一つで、いくつかの Django プロジェクトからたくさんの Web サイトをホストするための機能
+
 SITE_ID = 1
