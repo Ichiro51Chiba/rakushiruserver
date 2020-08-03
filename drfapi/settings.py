@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'api_zaikodata',
     'api_user',
-    'api_dm.apps.ApiDmConfig',
+    'api_usersite.apps.ApiDmConfig',
 ]
 
 
@@ -125,3 +125,5 @@ REST_FRAMEWORK = {
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 SITE_ID = 1
+
+# AUTH_USER_MODEL = 'user.User'

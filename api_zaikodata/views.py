@@ -34,10 +34,7 @@ class ZaikoViewSet(viewsets.ModelViewSet):
     data = self.serializer_class(queryset, many=True).data
     return Response(data)
   
-  
-  
-  
-  
+ 
 
   
   
