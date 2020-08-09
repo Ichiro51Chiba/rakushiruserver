@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from api_usersite.models import User
 from django.core.validators import MinValueValidator
 from django.core.validators import RegexValidator
 
@@ -30,7 +30,7 @@ class Zaiko(models.Model):
   # 備考
   remark = models.CharField(max_length=70)
   # 写真
-  pic = models.ImageField(upload_to=None,   height_field=None, width_field=None, max_length=100,null=True)
+  pic = models.ImageField(upload_to=None,   height_field=None, width_field=None, max_length=100,null=True,blank=True)
   # 作成日
   create_at = models.DateTimeField(auto_now_add=True)
   # 更新日

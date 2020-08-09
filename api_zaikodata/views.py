@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Zaiko
-from django.contrib.auth.models import User
+from api_usersite.models import User
 from .serializers import ZaikoSerializers,UserSerializers
 from rest_framework import viewsets
 from rest_framework.response import Response
@@ -26,10 +26,11 @@ class ZaikoViewSet(viewsets.ModelViewSet):
   # permission_classes = (IsAuthenticated,)
   def list(self, request):
     name = request.GET.get("name", "")
-    if name == "":
-      queryset = self.queryset
-    else:
-      queryset = self.queryset.filter(name__contains = name)
+    
+    queryset = self.queryset.filter(user=request.user)
+    
+    if name != "":
+      queryset = queryset.filter(name__contains = name)
       
     data = self.serializer_class(queryset, many=True).data
     return Response(data)
