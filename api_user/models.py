@@ -1,7 +1,9 @@
 from django.db import models
 from django.core.validators import RegexValidator
+# from api_usersite.models import User
 
 class Company(models.Model):
+  # user_com = models.ForeignKey(User, on_delete=models.CASCADE,null=True) #追加
   # 会社名
   company = models.CharField(max_length=50)
   # 電話番号
