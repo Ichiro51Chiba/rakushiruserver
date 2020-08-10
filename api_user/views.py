@@ -14,7 +14,14 @@ class CompanyViewSet(viewsets.ModelViewSet):
   # authentication_classes = (TokenAuthentication,)
   # permission_classes = (IsAuthenticated,)
   def list(self, request):
+    
+    company = request.GET.get("company", "")
     companies = self.queryset.filter(id = request.user.company.id)
+    
+    # if company != "":
+    #   companies = Company.objects.filter(name__contains = company)
+    # else:
+    #   companies = self.Company.objects.filter(name__contains = company)
     
     data = self.serializer_class(companies, many=True).data
     return Response(data)
