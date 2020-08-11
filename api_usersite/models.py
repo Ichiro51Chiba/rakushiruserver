@@ -88,6 +88,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 class Settinguser(models.Model):
     # user設定画面
     
+    set_user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
     #品目No
     set_no     = models.BooleanField(default=True)
     #勘定コード
