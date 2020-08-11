@@ -19,9 +19,9 @@ class CompanyViewSet(viewsets.ModelViewSet):
     companies = self.queryset.filter(id = request.user.company.id)
     
     # if company != "":
-    #   companies = Company.objects.filter(name__contains = company)
+    #   companies = self.companies(company__contains = company)
     # else:
-    #   companies = self.Company.objects.filter(name__contains = company)
+    #   companies = self.companies.filter(company__contains = company)
     
     data = self.serializer_class(companies, many=True).data
     return Response(data)

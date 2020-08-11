@@ -83,3 +83,33 @@ class User(AbstractBaseUser, PermissionsMixin):
             age = today_year - year - 1
         return age
 # Create your models here.
+
+
+class Settinguser(models.Model):
+    # user設定画面
+    
+    #品目No
+    set_no     = models.BooleanField(default=True)
+    #勘定コード
+    set_kanzyo = models.BooleanField(default=True)
+    #品目名称
+    set_name   = models.BooleanField(default=True)
+    #規格コード
+    set_code   = models.BooleanField(default=True)
+    #評価単価
+    set_price  = models.BooleanField(default=True)
+    #新品/中古
+    set_which  = models.BooleanField(default=True)
+    #実残数
+    set_number = models.BooleanField(default=True)
+    #合計金額
+    set_price  = models.BooleanField(default=True)
+    #備考
+    set_remark = models.BooleanField(default=True)
+    #写真
+    set_pic    = models.BooleanField(default=True) 
+    
+    def __str__(self):
+      return self.set_name 
+    
+
