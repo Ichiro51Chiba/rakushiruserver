@@ -31,8 +31,8 @@ class ZaikoViewSet(viewsets.ModelViewSet):
     
     if name != "":
       queryset = queryset.filter(name__contains = name)
-    else:
-      queryset = self.queryset.filter(name__contains = name)
+    # else:
+    #   queryset = self.queryset.filter(name__contains = name)
       
     data = self.serializer_class(queryset, many=True).data
     return Response(data)

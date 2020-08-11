@@ -18,10 +18,8 @@ class CompanyViewSet(viewsets.ModelViewSet):
     company = request.GET.get("company", "")
     companies = self.queryset.filter(id = request.user.company.id)
     
-    # if company != "":
-    #   companies = self.companies(company__contains = company)
-    # else:
-    #   companies = self.companies.filter(company__contains = company)
+    if company != "":
+      companies = companies.filter(company__contains = company)
     
     data = self.serializer_class(companies, many=True).data
     return Response(data)
