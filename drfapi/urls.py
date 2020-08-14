@@ -10,6 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/user/',include('api_user.urls')),
     path('api/',include('api_zaikodata.urls')),
+    path('sets/',include('api_usersite.urls')),
     
     # ログイン認証
     path('api-auth/', include('rest_framework.urls')),

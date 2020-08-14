@@ -104,7 +104,7 @@ class Settinguser(models.Model):
     #実残数
     set_number = models.BooleanField(default=True)
     #合計金額
-    set_price  = models.BooleanField(default=True)
+    set_totalprice  = models.BooleanField(default=True)
     #備考
     set_remark = models.BooleanField(default=True)
     #写真
