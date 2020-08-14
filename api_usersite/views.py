@@ -1,7 +1,10 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from rest_framework.response import Response
 from .models import Settinguser
 from .serializers import Settinguserserializer
 from rest_framework import viewsets
+
 
 # Create your views here.
 # class UserViewSet(viewset.ModelViewSet):
@@ -20,3 +23,12 @@ from rest_framework import viewsets
 class SettinguserViewSet(viewsets.ModelViewSet):
   queryset = Settinguser.objects.all()
   serializer_class = Settinguserserializer
+  
+  def list(self, request):
+    setting = self.queryset.filter(set_user=request.user).first()
+    
+    if setting is None:
+      return HttpResponse("NOT FOUND", 404)
+    
+    data = self.serializer_class(setting).data
+    return Response(data)

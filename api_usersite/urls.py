@@ -5,7 +5,7 @@ from .views import SettinguserViewSet
 
 router = routers.DefaultRouter()
 
-router.register('Settings',SettinguserViewSet)
+router.register('settings',SettinguserViewSet)
 
 urlpatterns = [
   path('', include(router.urls)),

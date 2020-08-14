@@ -43,7 +43,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     id            = models.AutoField('ID', primary_key=True)
     username      = models.CharField('ニックネーム', max_length=255, null=False)
     email         = models.EmailField(verbose_name='email address', max_length=255, unique=True, null=False)
-    company       = models.ForeignKey(Company, on_delete = models.CASCADE, null=True, blank=True)
+    company       = models.ForeignKey(Company, on_delete = models.SET_NULL, null=True, blank=True)
     birthday      = models.DateField('生年月日', null=True, blank=True)
     address       = models.CharField('現住所', max_length=140, null=True, blank=True)
     password      = models.CharField('パスワード', max_length=140, null=False)
@@ -88,7 +88,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 class Settinguser(models.Model):
     # user設定画面
     
-    set_user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
+    set_user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     #品目No
     set_no     = models.BooleanField(default=True)
     #勘定コード
@@ -110,7 +110,7 @@ class Settinguser(models.Model):
     #写真
     set_pic    = models.BooleanField(default=True) 
     
-    def __str__(self):
-      return self.set_name 
+    #def __str__(self):
+    #  return self.set_user.__str__
     
 

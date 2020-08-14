@@ -24,4 +24,14 @@ class CompanyViewSet(viewsets.ModelViewSet):
     data = self.serializer_class(companies, many=True).data
     return Response(data)
 
+  def create(self, request):
+    company = Company.objects.create(**request.data)
+
+    print("="*100)
+    print('company', company)
+    user = request.user
+    user.company = company
+    user.save()
+    
+    return Response()
   
