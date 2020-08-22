@@ -125,6 +125,8 @@ REST_FRAMEWORK = {
 # ユーザーの登録した時に Email でも認証確認する時に使う機能
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+CSRF_COOKIE_NAME = "XSRF-TOKEN"
+
 SITE_ID = 1
 
 AUTH_USER_MODEL = 'api_usersite.User'

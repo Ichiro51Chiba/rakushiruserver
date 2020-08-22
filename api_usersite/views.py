@@ -19,6 +19,9 @@ from rest_framework import viewsets
 #     user_manager = UserManager()
 #     user_manager.create_user(email, password, compnay=company)
 
+#class UserViewSet(viewsets.ModelViewSet):
+  
+  
 
 class SettinguserViewSet(viewsets.ModelViewSet):
   queryset = Settinguser.objects.all()

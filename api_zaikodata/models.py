@@ -13,22 +13,22 @@ class Zaiko(models.Model):
   
   user = models.ForeignKey(User, on_delete=models.CASCADE) #追加
   # 勘定コード
-  kanzyo = models.IntegerField(validators=  [MinValueValidator(0)])
+  kanzyo = models.IntegerField(validators=  [MinValueValidator(0)],null=True,blank=True)
   # model_no = models.AutoField
   # 規格コード
-  code = models.IntegerField(validators=  [MinValueValidator(0)])
+  code = models.IntegerField(validators=  [MinValueValidator(0)],null=True,blank=True)
   # 評価単価
-  price = models.IntegerField(validators=  [MinValueValidator(0)])
+  price = models.IntegerField(validators=  [MinValueValidator(0)],null=True,blank=True)
   # 新品/中古
-  status = models.CharField(max_length=40,choices=STATUS,  default=1)
+  status = models.CharField(max_length=40,choices=STATUS,  default=1,null=True,blank=True)
   # 実残数
-  number = models.IntegerField(validators=  [MinValueValidator(0)])
+  number = models.IntegerField(validators=  [MinValueValidator(0)],null=True,blank=True)
   # 品目名称
-  name = models.CharField(max_length=50)
+  name = models.CharField(max_length=50,null=True,blank=True)
   # 合計金額
-  total_price = models.IntegerField(validators=  [MinValueValidator(0)])
+  total_price = models.IntegerField(validators=  [MinValueValidator(0)],null=True,blank=True)
   # 備考
-  remark = models.CharField(max_length=70)
+  remark = models.CharField(max_length=70,null=True,blank=True)
   # 写真
   pic = models.ImageField(upload_to=None,   height_field=None, width_field=None, max_length=100,null=True,blank=True)
   # 作成日

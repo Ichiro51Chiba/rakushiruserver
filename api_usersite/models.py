@@ -43,7 +43,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     id            = models.AutoField('ID', primary_key=True)
     username      = models.CharField('ニックネーム', max_length=255, null=False)
     email         = models.EmailField(verbose_name='email address', max_length=255, unique=True, null=False)
-    company       = models.ForeignKey(Company, on_delete = models.SET_NULL, null=True, blank=True)
+    companies     = models.ManyToManyField(Company, null=True, blank=True)
     birthday      = models.DateField('生年月日', null=True, blank=True)
     address       = models.CharField('現住所', max_length=140, null=True, blank=True)
     password      = models.CharField('パスワード', max_length=140, null=False)
