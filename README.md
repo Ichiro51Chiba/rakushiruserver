@@ -1,0 +1,60 @@
+  <h4>閲覧頂きありがとうございます。</h4>
+  <h4>まだ、完成ではございません。さらに進化していきますので楽しみにして下さい。機能の実装の仕方を教えて欲しい等ありましたら、メッセージ下さい。</h4>
+ 
+ <h1>Rakushiru</h1>
+ <h4>アプリ概要</h4>
+
+ <p>在庫管理アプリケーション</p>
+ <h4>技術一覧(フロント、サーバー込み)</h4>
+ <ul>
+   <li>React.js</li>
+   <li>DjangoRestFramework</li>
+   <li>HTML</li>
+   <li>CSS</li>
+   <li>Javascript</li>
+   <li>python</li>
+   <li>AWS(EC2,RDS)</li>
+   <li>sqlite3</li>
+   <li>Docker</li>
+   <li>bootstrap</li>
+   <li>postman</li>
+   <li>pycharm</li>
+   <li>API</li>
+   <li>GitHub</li>
+   <li>jooto</li>
+   <li>vscode</li>
+   <li>vim</li>
+   <li>Atom</li>
+   <li>mac</li>
+   <li>tarmnal</li>
+   <li>iterm</li>
+ </ul>
+ <h4>機能一覧</h4>
+ <ul>
+ <li>ユーザー登録</li>
+ <li>ユーザー情報編集</li>
+ <li>ログイン</li>
+ <li>ログアウト</li>
+ <li>パスワード再設定</li>
+ <li>認証機能</li>
+ <li>在庫/会社情報登録</li>
+ <li>在庫/会社情報読み取り</li>
+ <li>在庫/会社情報更新</li>
+ <li>在庫/会社情報削除</li>
+ <li>画像投稿機能</li>
+ <li>登録先一覧表示</li>
+ <li>ユーザー毎にデータを持たせる</li>
+ <li>他のユーザーにはデータがみられない</li>
+ <li>備考機能</li>
+ <li>登録先検索</li>
+ <li>在庫検索</li>
+ <li>アラート機能</li>
+ <li>お問い合わせ機能</li>
+ <li>表示設定機能</li>
+ <li>レシポンシブルデザイン</li>
+ <li></li>
+ <li></li>
+ </ul>
+
+
+
