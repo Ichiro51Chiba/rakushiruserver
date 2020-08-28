@@ -18,13 +18,33 @@ class UserViewSet(viewsets.ModelViewSet):
   serializer_class = UserSerializers
   permission_classes = []
   
+  # def list(self, request):
+    
+  #   company = request.GET.get("company", "")
+  #   companies = self.queryset.filter(id = request.user.company.id)
+  #   if company != "":
+  #     companies = companies.filter(company__contains = company)
+    
+  #   data = self.serializer_class(companies, many=True).data
+  #   return Response(data)
+  
+
+  
   # /users/companies/ [GET]
   # /users/companies/ [POST]
   @action(detail=False, methods=['get', 'post'])
+
   def companies(self, request):
     if request.method == 'GET':
       user = request.user
       companies = user.companies.all()
+      data = CompanySerializers(companies, many=True).data
+      # return Response(data)
+      company = request.GET.get("company", "")
+      # companies = self.queryset.filter(id = request.user.company.id)
+      if company != "":
+        companies = companies.filter(company__contains = company)
+      
       data = CompanySerializers(companies, many=True).data
       return Response(data)
     
@@ -36,7 +56,9 @@ class UserViewSet(viewsets.ModelViewSet):
       user.save()
       data = CompanySerializers(company).data
       return Response(data)
-  
+
+
+
   
   
 
@@ -46,7 +68,7 @@ class ZaikoViewSet(viewsets.ModelViewSet):
   # authentication_classes = (TokenAuthentication,)
   # permission_classes = (IsAuthenticated,)
   def list(self, request):
-    
+            
     name = request.GET.get("name", "")
     queryset = self.queryset.filter(user=request.user)
     
@@ -58,6 +80,8 @@ class ZaikoViewSet(viewsets.ModelViewSet):
     data = self.serializer_class(queryset, many=True).data
     return Response(data)
   
+  
+
  
 
   

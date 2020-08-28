@@ -4,6 +4,8 @@ from rest_framework.response import Response
 from .models import Settinguser
 from .serializers import Settinguserserializer
 from rest_framework import viewsets
+from api_user.models import Company
+from api_user.serializers import CompanySerializers
 
 
 # Create your views here.
@@ -19,7 +21,6 @@ from rest_framework import viewsets
 #     user_manager = UserManager()
 #     user_manager.create_user(email, password, compnay=company)
 
-#class UserViewSet(viewsets.ModelViewSet):
   
   
 
@@ -35,3 +36,5 @@ class SettinguserViewSet(viewsets.ModelViewSet):
     
     data = self.serializer_class(setting).data
     return Response(data)
+  
+

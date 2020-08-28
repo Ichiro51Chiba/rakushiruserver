@@ -15,6 +15,7 @@
    <li>python</li>
    <li>AWS(EC2,RDS)</li>
    <li>sqlite3</li>
+   <li>Jenkins</li>
    <li>Docker</li>
    <li>bootstrap</li>
    <li>postman</li>
